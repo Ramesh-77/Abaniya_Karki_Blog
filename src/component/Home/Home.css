@@ -1,0 +1,149 @@
+.homeImg {
+  background-image: url("https://cdn.pixabay.com/photo/2013/06/20/13/52/world-140304__340.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  background-color: red;
+}
+
+/* dropdown css for front page navbar */
+.navbar .collapse .navbar-nav .frontpage_drop_down {
+  position: relative;
+  display: inline-block;
+}
+.navbar .collapse .navbar-nav .frontpage_drop_down .dropdown-item {
+  color: black;
+  border: none;
+  cursor: pointer;
+}
+.navbar .collapse .navbar-nav .frontpage_drop_down .dropdown-menu {
+  color: rgb(71, 20, 20);
+  display: none;
+  position: absolute;
+  /* background-color: #f9f9f9; */
+  min-width: 160px;
+  /* box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2); */
+  z-index: 1;
+  /* background-color: rgb(22, 25, 22); */
+  opacity: 0.6;
+}
+.navbar
+  .collapse
+  .navbar-nav
+  .frontpage_drop_down
+  .dropdown-menu
+  .dropdown-item {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  font-weight: bold;
+}
+.navbar .navbar-nav .frontpage_drop_down .dropdown-menu .dropdown-item:hover {
+  color: white;
+  background-color: black;
+  text-transform: uppercase;
+}
+.navbar .navbar-nav .frontpage_drop_down:hover .dropdown-menu {
+  display: block;
+}
+
+/**
+  * ! styles for header nav-link
+  **/
+
+.header-link:hover {
+  background-color: rgb(201, 198, 198) !important;
+  border-radius: 10px !important;
+  width: 120px;
+  text-align: center;
+  color: black !important;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+/**
+  * ! styles for appointment btn
+  **/
+
+.appointmentForm {
+  position: absolute;
+  top: 150px;
+  right: 30px;
+}
+
+.appointmentBtn:hover {
+  background-color: #25c6aa !important;
+  color: #fff;
+}
+.appointmentCard {
+  background-color: transparent;
+  border: 1px solid grey;
+  border-radius: 10px;
+}
+
+/**
+  * !styles for footer social media icons
+  **/
+.f-facebook:hover {
+  color: blue;
+}
+.f-twitter:hover {
+  color: #00b4d8;
+}
+.f-youtube:hover {
+  color: red;
+}
+.f-instagram:hover {
+  color: #ff006e;
+}
+.f-linkedin:hover {
+  color: #0077b6;
+}
+
+/* for word transition */
+.words {
+  overflow: hidden;
+  margin-top: 3rem;
+}
+.words h3 {
+  display: block;
+  border: 1px solid orange;
+  animation: spin_words 6s infinite;
+}
+@keyframes spin_words {
+  10% {
+    transform: translateY(-112%);
+  }
+  25% {
+    transform: translateY(-100%);
+  }
+  35% {
+    transform: translateY(-212%);
+  }
+  50% {
+    transform: translateY(-100%);
+  }
+
+  60% {
+    transform: translateY(-312%);
+  }
+  75% {
+    transform: translateY(-300%);
+  }
+  85% {
+    transform: translateY(-412%);
+  }
+  100% {
+    transform: translateY(-400%);
+  }
+}
+
+/* css for view btn */
+.view_btn:hover {
+  background: #ffffff;
+  border-radius: 2px solid rgb(18, 94, 216);
+  color: #0077b6;
+  font-weight: bold;
+}

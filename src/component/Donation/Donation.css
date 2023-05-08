@@ -1,0 +1,37 @@
+/* for word transition */
+.thank_you {
+    overflow: hidden;
+    margin-top: 3rem;
+  }
+  .thank_you h3 {
+    display: inline block;
+
+    animation: spin_words 4s infinite;
+  }
+  @keyframes spin_words {
+    10% {
+      transform: translateY(-112%);
+    }
+    25% {
+      transform: translateY(-100%);
+    }
+    35% {
+      transform: translateY(-212%);
+    }
+    50% {
+      transform: translateY(-100%);
+    }
+  
+    60% {
+      transform: translateY(-312%);
+    }
+    75% {
+      transform: translateY(-300%);
+    }
+    85% {
+      transform: translateY(-412%);
+    }
+    100% {
+      transform: translateY(-400%);
+    }
+  }
