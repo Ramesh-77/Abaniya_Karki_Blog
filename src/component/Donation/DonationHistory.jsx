@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import Header from "../Header/Header";
-import donation_img from "../../Images/cyclist.jpg";
 
 const DonationHistory = () => {
   const [data, setDonationData] = useState([]);
@@ -30,7 +29,7 @@ const DonationHistory = () => {
 
   const headers = [
     { key: "sn", label: "S.N." },
-    { key: "country", label: "Country" },
+    { key: "countryName", label: "Country" },
     { key: "fullname", label: "Full Name" },
     { key: "address", label: "Address" },
     { key: "occupation", label: "Occupation" },
@@ -77,7 +76,7 @@ const DonationHistory = () => {
                             <div className="col-md-12 col-12">
                               <div style={{ textAlign: "right" }}>
                                 <Link
-                                  to="/addProduct"
+                                  to="/add-donation-history"
                                   className="btn btn-primary fw-bold my-2 text-white"
                                 >
                                   Add New
@@ -124,7 +123,7 @@ const DonationHistory = () => {
                                             </td> */}
 
                                             <td>{items.sn}</td>
-                                            <td>{items.country}</td>
+                                            <td>{items.countryName}</td>
                                             <td>{items.fullname}</td>
                                             <td>{items.address}</td>
                                             <td>{items.occupation}</td>
@@ -133,11 +132,10 @@ const DonationHistory = () => {
                                             <td>{items.amount}</td>
                                             <td>
                                               <img
-                                                src={donation_img}
-                                                // src={
-                                                //   "http://localhost:5000/" +
-                                                //   items.image
-                                                // }
+                                                src={
+                                                  "http://localhost:5000/" +
+                                                  items.image
+                                                }
                                                 alt=""
                                                 className="img-fluid"
                                                 style={{

@@ -1,9 +1,23 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import home from "../../Images/home.jpg";
 import "../Home/Home";
+import axios from "axios";
 
 const Header = () => {
+  const [cdata, setCountryData] = useState([]);
+  useEffect(() => {
+    axios
+      .get(`http://localhost:5000/get-country`)
+      .then((result) => {
+        setCountryData(result.data);
+        // console.log(result.data[0].countryName)
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
+
   return (
     <>
       <div
@@ -102,10 +116,7 @@ const Header = () => {
                     className="dropdown-menu"
                     aria-labelledby="navbarDropdown"
                   >
-                    <Link
-                      className="dropdown-item"
-                      to="/all-news"
-                    >
+                    <Link className="dropdown-item" to="/all-news">
                       Newspapers
                     </Link>
                     <Link
@@ -128,20 +139,26 @@ const Header = () => {
                   >
                     Countries
                   </Link>
-                  <div
-                    className="dropdown-menu"
-                    aria-labelledby="navbarDropdown"
-                  >
-                    <Link className="dropdown-item" to="/">
-                      Nepal
-                    </Link>
-                    <Link
-                      className="dropdown-item"
-                      to="/all-residential-services"
+
+                  <>
+                    <div
+                      // key={id}
+                      className="dropdown-menu bg-danger"
+                      aria-labelledby="navbarDropdown"
                     >
-                      Bangladesh
-                    </Link>
-                  </div>
+                      {cdata.map((data, id) => {
+                        return (
+                          <Link
+                            key={id}
+                            className="dropdown-item"
+                            to={"/single-country/" + data._id}
+                          >
+                            {data.countryName}
+                          </Link>
+                        );
+                      })}
+                    </div>
+                  </>
                 </li>
 
                 {/* adding dropdowns for Donations */}
@@ -192,6 +209,19 @@ const Header = () => {
                   >
                     Live Map
                   </a>
+                </li>
+
+                <li className="nav-item d-flex flex-row">
+                  {/* <Link to="/" className="nav-link active" aria-current="page">
+                    <i className="bi bi-person text-white fs-5"></i>
+                  </Link> */}
+                  <Link
+                    to="/admin-dashboard"
+                    className="nav-link active text-white"
+                    aria-current="page"
+                  >
+                    My Account
+                  </Link>
                 </li>
 
                 {/* closing dropdowns  */}
